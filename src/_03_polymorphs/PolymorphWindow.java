@@ -21,6 +21,8 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     
     public static void main(String[] args) {
    	 new PolymorphWindow().buildWindow();
+   //test RedMorph: Finish Next Class
+   
     }
     
     public void buildWindow(){
@@ -41,7 +43,8 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     //draw background
    	 g.setColor(Color.LIGHT_GRAY);
    	 g.fillRect(0, 0, 500, 500);
-   	
+	RedMorph rm = new RedMorph(20,20);
+	 rm.draw(g);
    	 //draw polymorph
    	 bluePoly.draw(g);
     }

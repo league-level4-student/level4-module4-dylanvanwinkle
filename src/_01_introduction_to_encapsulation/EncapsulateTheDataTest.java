@@ -44,9 +44,11 @@ class EncapsulateTheDataTest {
 		EncapsulateTheData.setmemberObj(true);
 		assertEquals(true, EncapsulateTheData.getmemberObj());
 		EncapsulateTheData.setmemberObj("");
-		asserttrue(EncapsulateTheData.memberObj instanceOf Object);
+		Object newObj = EncapsulateTheData.getmemberObj();
+		assertTrue(newObj instanceof Object);
 		EncapsulateTheData.setmemberObj("Hello");
-		assertEquals(new Object(), EncapsulateTheData.getmemberObj());
+		Object newObj2 = EncapsulateTheData.getmemberObj();
+		assertTrue(newObj2 instanceof Object);
 		
 	}
 }
