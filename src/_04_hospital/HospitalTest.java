@@ -34,7 +34,7 @@ public class HospitalTest extends TestCase {
 	}
 
 	/* Fix asserts one at a time */
-	public void testDoctorsHaveSpecialties() throws Exception {
+		public void testDoctorsHaveSpecialties() throws Exception {
 		Doctor testDoctor = new Doctor();
 		assertEquals(false, testDoctor.performsSurgery());
 
@@ -48,7 +48,7 @@ public class HospitalTest extends TestCase {
 	}
 
 	/* A doctor has a list of patients */
-	public void testAssignDoctor() throws Exception {
+		public void testAssignDoctor() throws Exception {
 		Doctor testDoctor = new GeneralPractitioner();
 		testDoctor.assignPatient(new Patient());
 		assertEquals(1, testDoctor.getPatients().size());
@@ -59,7 +59,7 @@ public class HospitalTest extends TestCase {
 	}
 
 	/* When you check a patient's pulse, they feel cared for */
-	public void testCheckPulse() throws Exception {
+		public void testCheckPulse() throws Exception {
 		Patient testPatient = new Patient();
 		assertEquals(false, testPatient.feelsCaredFor());
 		testPatient.checkPulse();
@@ -97,10 +97,28 @@ assertTrue(testDoctor.getPatients().size() == 3);
 
 	public void test8Patients() throws Exception {
 		// TODO: add 3 doctors to hospital
-
+		Hospital h = new Hospital();
+		testHospital.addDoctor(new GeneralPractitioner());
+		testHospital.addDoctor(new GeneralPractitioner());
+		testHospital.addDoctor(new GeneralPractitioner());
 		// TODO: add 8 patients to hospital
-
+		Patient bob = new Patient();
+		Patient fred = new Patient();
+		Patient max = new Patient();
+		Patient sal = new Patient();
+		Patient john = new Patient();
+		Patient joe = new Patient();
+		Patient bill = new Patient();
+		Patient matt = new Patient();
 		// hospital assigns patients to doctors
+		testHospital.getDoctors().get(0).assignPatient(bob);
+		testHospital.getDoctors().get(0).assignPatient(fred);
+		testHospital.getDoctors().get(0).assignPatient(max);
+		testHospital.getDoctors().get(1).assignPatient(sal);
+		testHospital.getDoctors().get(1).assignPatient(john);
+		testHospital.getDoctors().get(1).assignPatient(joe);
+		testHospital.getDoctors().get(2).assignPatient(bill);
+		testHospital.getDoctors().get(2).assignPatient(matt);
 		testHospital.assignPatientsToDoctors();
 		// hospital.getDoctors shows doctors have 3, 3, 2 patients
 		List<Doctor> testDoctors = testHospital.getDoctors();
